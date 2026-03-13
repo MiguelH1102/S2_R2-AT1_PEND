@@ -3,29 +3,38 @@ const botao = document.getElementById("btnAdicionar");
 const mensagem = document.getElementById("mensagem");
 const lista = document.getElementById("listaTarefas");
 
-botao.addEventListener("click", function(){
+botao.addEventListener("click", function () {
 
     const texto = input.value.trim();
 
-    if(texto === ""){
-        
-        mensagem.textContent = "Digite algo para adicionar há lista!";
+    if (texto === "") {
+        mensagem.textContent = "Digite sua tarefa na lista!";
         mensagem.className = "text-danger fw-bold";
-
         return;
     }
 
     const novaTarefa = document.createElement("li");
+    novaTarefa.className = "list-group-item d-flex justify-content-between align-items-center";
 
-    novaTarefa.textContent = texto;
+    const span = document.createElement("span");
+    span.textContent = texto;
 
-    novaTarefa.className = "list-group-item";
+    const btnRemover = document.createElement("button");
+    btnRemover.textContent = "Remover";
+    btnRemover.className = "btn btn-danger btn-sm";
+
+    btnRemover.addEventListener("click", function () {
+        lista.removeChild(novaTarefa);
+    });
+
+    novaTarefa.appendChild(span);
+    novaTarefa.appendChild(btnRemover);
+
 
     lista.appendChild(novaTarefa);
 
     input.value = "";
 
-    mensagem.textContent = "Item adicionado com sucesso!";
+    mensagem.textContent = "Tarefa adicionado com sucesso!";
     mensagem.className = "text-success fw-bold";
-
-});
+})
