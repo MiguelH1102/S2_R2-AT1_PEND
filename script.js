@@ -1,20 +1,31 @@
-let itemDigite = document.getElementById("itemDigite");
-let btnListar = document.getElementById("btnListar");
-let lista = document.getElementById("lista");
+const input = document.getElementById("inputTarefa");
+const botao = document.getElementById("btnAdicionar");
+const mensagem = document.getElementById("mensagem");
+const lista = document.getElementById("listaTarefas");
 
-btnListar.addEventListener("click", ()=>{
+botao.addEventListener("click", function(){
 
-    let texto = itemDigite.value;
+    const texto = input.value.trim();
 
-    if(texto != ""){
-
-        let novoItem = document.createElement("li");
-        novoItem.innerText = texto;
-        novoItem.className = "list-group-item";
+    if(texto === ""){
         
-        lista.appendChild(novoItem);
+        mensagem.textContent = "Digite algo para adicionar há lista!";
+        mensagem.className = "text-danger fw-bold";
 
-        itemDigite.value = "";
+        return;
     }
 
-})
+    const novaTarefa = document.createElement("li");
+
+    novaTarefa.textContent = texto;
+
+    novaTarefa.className = "list-group-item";
+
+    lista.appendChild(novaTarefa);
+
+    input.value = "";
+
+    mensagem.textContent = "Item adicionado com sucesso!";
+    mensagem.className = "text-success fw-bold";
+
+});
