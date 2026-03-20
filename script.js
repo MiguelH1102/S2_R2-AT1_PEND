@@ -43,7 +43,7 @@ botao.addEventListener("click",  ()=> {
 
    
     const btnRemover = document.createElement("button");
-    btnRemover.textContent = "Remover";
+    btnRemover.textContent = "Remover Tarefa";
     btnRemover.className = "btn btn-danger btn-sm";
 
     btnRemover.addEventListener("click",  ()=> {
