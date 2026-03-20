@@ -3,9 +3,9 @@ const botao = document.getElementById("btnAdicionar");
 const mensagem = document.getElementById("mensagem");
 const lista = document.getElementById("listaTarefas");
 
-botao.addEventListener("click", function () {
+botao.addEventListener("click",  ()=> {
 
-    const texto = input.value.trim();
+    const texto = input.value;
 
     if (texto === "") {
         mensagem.textContent = "Digite sua tarefa na lista!";
@@ -20,10 +20,10 @@ botao.addEventListener("click", function () {
     span.textContent = texto;
 
     const btnRemover = document.createElement("button");
-    btnRemover.textContent = "Remover";
+    btnRemover.textContent = "Remover Tarefa";
     btnRemover.className = "btn btn-danger btn-sm";
 
-    btnRemover.addEventListener("click", function () {
+    btnRemover.addEventListener("click",  ()=> {
         lista.removeChild(novaTarefa);
     });
 
