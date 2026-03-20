@@ -3,7 +3,7 @@ const botao = document.getElementById("btnAdicionar");
 const mensagem = document.getElementById("mensagem");
 const lista = document.getElementById("listaTarefas");
 
-botao.addEventListener("click", function(){
+botao.addEventListener("click", ()=>{
 
     const texto = input.value.trim();
 
