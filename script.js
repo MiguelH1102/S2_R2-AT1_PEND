@@ -5,7 +5,7 @@ const lista = document.getElementById("listaTarefas");
 
 botao.addEventListener("click", ()=>{
 
-    const texto = input.value.trim();
+    const texto = input.value;
 
     if(texto === ""){
         
